@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Triangle Checker</title>
+    <script>
+        function checkTriangle() {
+            // Prompt for side lengths
+            let a = parseFloat(prompt("Enter side a:"));
+            let b = parseFloat(prompt("Enter side b:"));
+            let c = parseFloat(prompt("Enter side c:"));
+
+            // Check if input is valid
+            if (isNaN(a) || isNaN(b) || isNaN(c) || a <= 0 || b <= 0 || c <= 0) {
+                alert("Invalid input. Please enter positive numeric values.");
+                return;
+            }
+
+            // Check triangle inequality
+            if (a + b > c && a + c > b && b + c > a) {
+                let type = "";
+
+                // Determine triangle type
+                if (a === b && b === c) {
+                    type = "Equilateral";
+                } else if (a === b || b === c || a === c) {
+                    type = "Isosceles";
+                } else {
+                    type = "Scalene";
+                }
+
+                // Calculate area using Heron's formula
+                let s = (a + b + c) / 2;
+                let area = Math.sqrt(s * (s - a) * (s - b) * (s - c));
+
+                // Display result
+                alert("The sides can form a triangle.\nType: " + type + "\nArea: " + area.toFixed(2));
+            } else {
+                alert("The given sides cannot form a triangle.");
+            }
+        }
+
+        // Run the function when page loads
+        window.onload = checkTriangle;
+    </script>
+</head>
+<body>
+    <h2>Check the alert box for the result!</h2>
+</body>
+</html>
