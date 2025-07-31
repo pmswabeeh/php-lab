@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head><title>Country Capital</title></head>
+<body>
+  <select id="country" onchange="showCapital()">
+    <option value="">Select Country</option>
+    <option value="India">India</option>
+    <option value="USA">USA</option>
+    <option value="Japan">Japan</option>
+  </select>
+
+  <input type="text" id="capital" readonly placeholder="Capital">
+
+  <script>
+    function showCapital() {
+      const country = document.getElementById("country").value;
+      const capitals = {
+        India: "New Delhi",
+        USA: "Washington D.C.",
+        Japan: "Tokyo"
+      };
+      document.getElementById("capital").value = capitals[country] || "";
+    }
+  </script>
+</body>
+</html>
