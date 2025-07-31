@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head><title>Years with Sunday on Jan 1</title></head>
+<body>
+  <button onclick="findSundays()">Check Years</button>
+
+  <script>
+    function findSundays() {
+      let start = parseInt(prompt("Enter start year:"));
+      let end = parseInt(prompt("Enter end year:"));
+
+      let result = "Years when Jan 1st is Sunday:\n";
+      for (let year = start; year <= end; year++) {
+        let d = new Date(year, 0, 1);
+        if (d.getDay() === 0) {
+          result += year + "\n";
+        }
+      }
+      alert(result);
+    }
+  </script>
+</body>
+</html>
