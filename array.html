@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head><title>Array Sum</title></head>
+<body>
+  <button onclick="sumArray()">Enter Numbers & Get Sum</button>
+
+  <script>
+    function sumArray() {
+      let size = parseInt(prompt("Enter number of elements:"));
+      let arr = [];
+      let sum = 0;
+
+      for (let i = 0; i < size; i++) {
+        let num = parseFloat(prompt(`Enter element ${i + 1}:`));
+        arr.push(num);
+        sum += num;
+      }
+
+      alert("Sum of array elements: " + sum);
+    }
+  </script>
+</body>
+</html>
