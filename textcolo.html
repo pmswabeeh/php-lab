@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head><title>Focus & Blur</title></head>
+<body>
+  <input type="text" id="myBox" onfocus="onFocus()" onblur="onBlur()" placeholder="Focus me">
+
+  <script>
+    function onFocus() {
+      let box = document.getElementById("myBox");
+      box.style.backgroundColor = "lightyellow";
+      box.style.color = "red";
+    }
+
+    function onBlur() {
+      let box = document.getElementById("myBox");
+      box.style.backgroundColor = "white";
+      box.style.color = "black";
+    }
+  </script>
+</body>
+</html>
